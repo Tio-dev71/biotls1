@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Contact Card </title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./Images/logo.jpg" type="image/x-icon">
+
+
+</head>
+<style>
+    * {
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+        -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+        outline: none !important;
+    }
+</style>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <div class="card">
+        <div class="profile reveal">
+            <img src="./Images/logo.jpg" alt="Profile Image" class="profile-image">
+            <h1 class="header-name">Trader Là Số 1</h1>
+            <h3 class="header__description">Chia sẻ kiến thức, kinh nghiệm về Trading Crypto, Trading thực chiến 24/7</h3>
+        </div>
+
+        <div class="join reveal">
+            <h2 class="join-title">🎯 Đăng ký tài khoản OKX để được hoàn phí và vào nhóm VIP</h2>
+            <p class="join-desc">
+                Đăng ký tài khoản OKX để nhận hoàn phí giao dịch, tham gia group trading thực chiến cùng Trader Là Số 1 và nhận các tín hiệu độc quyền mỗi ngày!
+            </p>
+
+            <div class="join-image">
+                <img id="joinImage" alt="Group VIP OKX" class="promo-img">
+            </div>
+
+            <a href="https://www.okx.com/join/HoanPhiTLS1" target="_blank" class="join-btn">
+                👉 HoanphiTLS1
+            </a>
+        </div>
+
+        <div class="contact-info reveal">
+            <h3 class="contact-name">Nhóm giao lưu Free</h3>
+            <a href="https://discord.gg/traderlaso1" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon" src="./Images/discord.png" alt="Discord">
+                    <span>Server Discord</span>
+                </div>
+            </a>
+            <a href="https://t.me/traderlaso1" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon telegram" src="./Images/telegram.png" alt="telegram">
+                    <span class="telegram">Telegram</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="contact-info reveal">
+            <h3 class="contact-name">Mạng xã hội TLS1</h3>
+            <a href="https://www.facebook.com/traderlaso1official" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon" src="./Images/facebook.png" alt="facebook">
+                    <span>Fanpage</span>
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/@baotran.tls1" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon" src="./Images/tiktok.png" alt="tiktok">
+                    <span>Tiktok live Bảo Trần</span>
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/@cie_tls1" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon" src="./Images/tiktok.png" alt="tiktok">
+                    <span>Tiktok Cie tin tức 24/7</span>
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/@traderlaso1_tintuccrypto" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon" src="./Images/tiktok.png" alt="tiktok">
+                    <span>Tiktok TLS1 những điều thú vị Crypto</span>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/@traderlaso1vn" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon" src="./Images/youtube.png" alt="youtube">
+                    <span>Kênh Youtube tin tức</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <h3>Liên hệ trực tiếp</h3>
+            <a href="https://t.me/baotranlc020" target="_blank" class="contact-link">
+                <div class="contact-item">
+                    <img class="icon telegram" src="./Images/telegram.png" alt="telegram">
+                    <span>Telegram Bảo Trần</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(function () {
+                loadingScreen.style.display = 'none';
+            },); 
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = function () {
+                for (let i = 0; i < elements.length; i++) {
+                    let windowHeight = window.innerHeight;
+                    let elementTop = elements[i].getBoundingClientRect().top;
+                    let elementVisible = 150;
+
+                    if (elementTop < windowHeight - elementVisible) {
+                        elements[i].classList.add('reveal-active');
+                    } else {
+                        elements[i].classList.remove('reveal-active');
+                    }
+                }
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = [
+                "./Images/anh1.png",
+                "./Images/anh2.png",
+                "./Images/anh3.png",
+                "./Images/anh4.png",
+                "./Images/anh5.png",
+                "./Images/anh6.png",
+                "./Images/anh7.png",
+            ];
+
+            let currentIndex = 0;
+            const imageElement = document.getElementById("joinImage");
+
+            imageElement.src = images[currentIndex];
+
+            function changeImage() {
+                imageElement.classList.add("fade-out");
+
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imageElement.src = images[currentIndex];
+                    imageElement.classList.remove("fade-out");
+                }, 1000);
+            }
+
+            setInterval(changeImage, 3000);
+        });
+    </script>
+</body>
+
+</html>
