@@ -50,11 +50,11 @@ h1 {
 .join {
     text-align: center;
     margin: 20px auto;
-    background: #0d0d0d;
+    background: #4a494980;
     color: #fff;
     padding: 20px;
     border-radius: 24px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px rgba(44, 115, 67, 0.4);
 }
 
 .join-title {
@@ -114,7 +114,7 @@ h1 {
     margin: 7px 0 ;
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #4a494980;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     transform: scale(1);
@@ -122,7 +122,7 @@ h1 {
 }
 
 .contact-item:hover {
-    box-shadow: 20px 20px 30px rgba(99, 96, 96, 0.2);
+    box-shadow: 20px 20px 30px rgba(44, 115, 67, 0.4);
     transform: scale(1.04);
 }
 
